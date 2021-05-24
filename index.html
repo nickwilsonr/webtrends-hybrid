@@ -1,44 +1,36 @@
-    <!DOCTYPE HTML>
-    <html><head>
-    <title>Hybrid Test website</title>
-    <script type="text/javascript">
-        window.webtrendsAsyncInit = function () {
-    var dcs = new Webtrends.dcs().init({ dcsid: "dcs222j3aqnd59x7xdfl23cpv_1k1o",
-        timezone: "-7", plugins: {
+<!DOCTYPE HTML>
+<html><head>
+<title>Hybrid Test website</title>
+<script type="text/javascript">
+   window.webtrendsAsyncInit = function () {
+      var dcs = new Webtrends.dcs()
+      .init({
+         dcsid: "dcs222j3aqnd59x7xdfl23cpv_1k1o", //Replace with your DCSID
+         timezone: -7,
+         plugins: {
+            id_broadcaster: {
+               src: "//s.webtrends.com/js/webtrends.id_broadcaster.js",
+               //List of element ids that link to your iOS application.
+               appids:["native"],
+            },
             id_receiver: {
                 src: "//s.webtrends.com/js/webtrends.id_receiver.js"
             }
          }
-    });
-
-    dcs.track(); 
-    }
-       window.webtrendsAsyncInit = function () {
-          var dcs = new Webtrends.dcs()
-          .init({
-             dcsid: "dcs222j3aqnd59x7xdfl23cpv_1k1o", //Replace with your DCSID
-             timezone: -7,
-             plugins: { 
-                id_broadcaster: { 
-                   src: "//s.webtrends.com/js/webtrends.id_broadcaster.js",
-                   //List of element ids that link to your iOS application.
-                   appids:["native"], 
-                }
-             }
-            })
-          .track();
-        };
-       (function(){
-          var s=document.createElement("script"); s.async=true; s.src="http://s.webtrends.com/js/webtrends.js";    
-          var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
-       } ());
-    </script>
-    </head>
-    <body>
-       <div>
-             <a id="native" href="wtdc://my/deep/link" >Launch Test app w/ id</a>
-             <br />
-             <a href="http://www.webtrends.com">Other Links...</a>
-             <br />
-       </div>
-    </body></html>
+        })
+      .track();
+    };
+   (function(){
+      var s=document.createElement("script"); s.async=true; s.src="http://s.webtrends.com/js/webtrends.js";   
+      var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
+   } ());
+</script>
+</head>
+<body>
+   <div>
+         <a id="native" href="wtdc://my/deep/link" >Launch Test app w/ id</a>
+         <br />
+         <a href="http://www.webtrends.com">Other Links...</a>
+         <br />
+   </div>
+</body></html>
